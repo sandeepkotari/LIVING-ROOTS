@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVING ROOTS - Biodegradable Coffins</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-slideshow">
+        <div class="slide" style="background-image: url('assets/bg1.jpg')"></div>
+        <div class="slide" style="background-image: url('assets/bg2.jpg')"></div>
+        <div class="slide" style="background-image: url('assets/bg3.jpg')"></div>
+    </div>
+    
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    
+    <div class="selection-page">
+        <h1 class="main-title">LIVING ROOTS</h1>
+        <p class="tagline">Have a life after death</p>
+
+        <!-- Coffin Type Selection -->
+        <div class="control-group">
+            <label for='coffin-type'>Select Coffin Type:</label>
+            <select id='coffin-type'>
+                <option value='human'>Human Coffin</option>
+                <option value='pet'>Pet Coffin</option>
+            </select>
+        </div>
+
+        <!-- Human Coffins Section -->
+        <div class="product-section">
+            <h2 class="section-title">Human Coffins</h2>
+            <div class="product-layout">
+                <div class="options-panel">
+                    <div class="control-group">
+                        <h4>Select Model</h4>
+                        <div class="model-selector">
+                            <div class="model-option active">
+                                <img src="images/piclumen-1743499005376.png" alt="Forest Model">
+                                <span>Forest Harmony</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                            <div class="model-option">
+                                <img src="images/piclumen-1743498993967.png" alt="Mountain Model">
+                                <span>Mountain Peace</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                            <div class="model-option">
+                                <img src="images/piclumen-1743498816946.png" alt="Garden Model">
+                                <span>Garden Serenity</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                            <div class="model-option">
+                                <img src="images/piclumen-1743499005376.png" alt="Custom Model">
+                                <span>Nature's Embrace</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h4>Size Selection</h4>
+                        <div class="size-buttons">
+                            <div class="size-price-option">
+                                <button class="size-btn" data-size="4" data-price="250">4 feet</button>
+                                <span class="price">₹250</span>
+                                <input type='number' class='quantity-input' data-size="4" min='0' value='0' placeholder="Qty">
+                            </div>
+                            <div class="size-price-option">
+                                <button class="size-btn" data-size="5" data-price="500">5 feet</button>
+                                <span class="price">₹500</span>
+                                <input type='number' class='quantity-input' data-size="5" min='0' value='0' placeholder="Qty">
+                            </div>
+                            <div class="size-price-option">
+                                <button class="size-btn" data-size="6" data-price="750">6 feet</button>
+                                <span class="price">₹750</span>
+                                <input type='number' class='quantity-input' data-size="6" min='0' value='0' placeholder="Qty">
+                            </div>
+                            <div class="size-price-option">
+                                <button class="size-btn" data-size="7" data-price="1000">7 feet</button>
+                                <span class="price">₹1000</span>
+                                <input type='number' class='quantity-input' data-size="7" min='0' value='0' placeholder="Qty">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-panel">
+                    <h3>Interactive Preview</h3>
+                    <div class="preview-box">
+                        <div class="background-overlay" id="backgroundOverlay"></div>
+                        <div class="image-container" id="imageContainer">
+                            <div class="rotation-guide" id="rotationGuide">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Click and drag to rotate</span>
+                            </div>
+                            <img id="previewImage" src="images/piclumen-1743499005376.png" alt="Selected coffin" draggable="true" style="display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pet Coffins Section -->
+        <div class="product-section pets-section">
+            <h2 class="section-title">Pet Coffins</h2>
+            <div class="product-layout">
+                <div class="options-panel">
+                    <div class="control-group">
+                        <h4>Select Pet Model</h4>
+                        <div class="model-selector">
+                            <div class="model-option pet-model active">
+                                <img src="images/piclumen-1743500503188.png" alt="Pet Forest Model">
+                                <span>Pet Forest Harmony</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                            <div class="model-option pet-model">
+                                <img src="images/piclumen-1743499005376.png" alt="Pet Mountain Model">
+                                <span>Pet Mountain Peace</span>
+                                <div class="model-price">Starting from ₹250</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <h4>Pet Size Selection</h4>
+                        <div class="size-buttons">
+                            <div class="size-price-option">
+                                <button class="size-btn pet-size" data-size="4" data-price="150">4 feet</button>
+                                <span class="price">₹150</span>
+                                <input type='number' class='quantity-input pet-quantity' data-size="4" min='0' value='0' placeholder="Qty">
+                            </div>
+                            <div class="size-price-option">
+                                <button class="size-btn pet-size" data-size="5" data-price="300">5 feet</button>
+                                <span class="price">₹300</span>
+                                <input type='number' class='quantity-input pet-quantity' data-size="5" min='0' value='0' placeholder="Qty">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-panel">
+                    <h3>Pet Coffin Preview</h3>
+                    <div class="preview-box">
+                        <div class="background-overlay pet-background"></div>
+                        <div class="image-container" id="petImageContainer">
+                            <div class="rotation-guide">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Click and drag to rotate</span>
+                            </div>
+                            <img id="petPreviewImage" src="images/piclumen-1743500503188.png" alt="Selected pet coffin" draggable="true" style="display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="order-section">
+            <h2>Order Summary</h2>
+            <div class="order-summary">
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Human Coffin Details:</span>
+                        <div id="humanSizeBreakdown" class="size-breakdown"></div>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Human Coffin Quantity:</span>
+                        <span id='selectedHumanQuantity'>0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Human Coffin Price:</span>
+                        <span id='selectedHumanPrice'>₹0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Pet Coffin Details:</span>
+                        <div id="petSizeBreakdown" class="size-breakdown"></div>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Pet Coffin Quantity:</span>
+                        <span id='selectedPetQuantity'>0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Pet Coffin Price:</span>
+                        <span id='selectedPetPrice'>₹0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Price:</span>
+                        <span id='selectedTotalPrice'>₹0</span>
+                    </div>
+                </div>
+                <button id="proceedToPayment" class="btn-primary" style="display: none;">
+                    <span>Proceed to Payment</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Payment Modal -->
+        <div id="paymentModal" class="modal">
+            <div class="modal-content">
+                <h2>Make Payment</h2>
+                <div class="qr-code-section">
+                    <div class="qr-code-container">
+                        <img src="assets/phonepe_qr.jpg" alt="Payment QR Code" class="qr-code">
+                        <p class="merchant-name">KOTARI SANDEEP</p>
+                        <p class="merchant-upi">UPI ID: ******9761</p>
+                    </div>
+                    <p class="scan-instructions">Scan this QR code with any UPI app (PhonePe/Google Pay/Paytm)</p>
+                </div>
+                <button class="btn-secondary" onclick="closePaymentModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
